@@ -1,0 +1,533 @@
+@import url('https://rsms.me/inter/inter.css');
+html { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter var', sans-serif; }
+  
+/*ANIMAÇÃO DO MENU*/
+
+.menu__link{
+	display: block;
+	will-change: color;
+	transition: color .25s ease-out;  
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+/* states */
+.menu__link:hover{
+	color:#E8AF00;
+}
+.menu__link:focus{
+  outline: #E8AF00  ;
+  color:#E8AF00;
+}
+
+/* hover animation */
+
+.menu__link{
+	position: relative;
+	overflow: hidden;
+}
+
+.menu__link::before, 
+.menu__link::after{
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: #E8AF00;
+
+  will-change: width;
+  transition: width .05s ease-out;
+
+  position: absolute;
+  bottom: 0;
+}
+
+.menu__link::before{
+  left: 50%
+  transform: translateX(-50%); 
+}
+
+.menu__link::after{
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.menu__link:hover::before, 
+.menu__link:hover::after{
+  width: 100%;
+  transition-duration: .15s;
+}
+
+.logo{
+	margin-left: -30px;
+	padding-right: 40px;
+}
+
+/*MENU*/
+
+header{
+	width:100%;
+	background-color:#2A005B;
+	font-family: "Courier New",  monospaceue-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Open Sans, Ubuntu, Fira Sans, Helvetica Neue, sans-serif;
+	display: flex;
+	justify-content: space-arond;
+	align-items: center;
+	padding: 0 100px;
+	box-sizing: border-box;
+	box-shadow:  5px 0px 5px black;
+	text-transform:uppercase;
+	position: fixed;
+	top: 0px;
+}
+
+header nav{
+	float:right;
+}
+
+header nav ul{
+	margin:0;
+	padding:0;
+	display:flex;
+}
+
+header nav ul li{
+	list-style:none;
+	position:relative;
+}
+
+header nav ul li.sub-menu:before{
+	content:'\f107';
+	font-family: fontAwesome;
+	position:absolute;
+	line-height:70px;
+	color:#FFF;
+	right:5px;
+}
+
+header nav ul li.active.sub-menu:before{
+	content:'\f106';
+}
+
+header nav ul li ul{
+	position:absolute;
+	left:0;
+	background-color:#2A005B;
+	display:none;
+}
+header nav ul li.active ul{
+	display:block;
+	
+}
+
+header nav ul li ul li{
+	display:block;
+	width: 200px;
+	list-style:none;
+	text-align:center;
+}
+header nav ul a{
+	line-height:70px;
+	padding: 0 20px;
+	color:#fff;
+	text-decoration:none;
+	display:block;
+	transition: 0.3s;
+}
+
+header nav ul li a:hover{
+	color:#E8AF00;
+}
+header nav ul li ul li{
+	background:#4a2375;
+}
+
+.menu-toggle{
+	color:#fff;
+	float:right;
+	line-height:50px;
+	font-size:24px;
+	cursor:pointer;
+	display:none;
+}
+
+@media (max-width: 950px){
+header{
+	padding:0 20px;
+}
+.menu-toggle{
+	display:block;
+}
+
+header nav{
+	position:absolute;
+	width:100%;
+	height: calc(100vh - 50px);
+	background:#2A005B;
+	top:50px;
+	left:-100%;
+	transition: 0.5s;
+}
+
+header nav:hover{
+	left:0;
+	margin-top:20px;
+}
+
+header nav ul{
+	display:block;
+	text-align:center;
+}
+
+header nav ul li:hover ul{
+	position:relative;
+}
+
+
+header nav ul li ul li{
+	width:100%;
+	position: relative;
+	top:0px;
+	list-style:none;
+	text-align:center;
+}
+
+.fa-chevron-down{
+	font-size: 1px;
+	
+	}
+	.socialmedia{
+	display:none;
+}
+header nav ul li a{
+	border-bottom:1px solid #4a2375;
+}
+}
+
+/*-------------REDES SOCIAIS--------------*/
+.socialmedia a{
+	font-size: 10px;
+}
+header .fa-facebook{
+	padding-left: 81px;
+}
+.socialmedia i{
+	line-height: 70px;
+	font-size: 18px;
+	margin-right: -15px;
+	color: #fff;
+	transition: 0.5s;
+}
+.socialmedia:hover i{
+	color: #E8AF00;
+}
+
+header{
+	width:100%;
+	background-color:#2A005B;
+	font-family: "Courier New",  monospaceue-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Open Sans, Ubuntu, Fira Sans, Helvetica Neue, sans-serif;
+	display: flex;
+	justify-content: space-arond;
+	align-items: center;
+	margin-bottom: 50px;
+	padding: 0 100px;
+	box-sizing: border-box;
+	height:70px;
+	text-transform:uppercase;
+}
+/*ffffffffffffffffffffffffffffffffffffffffff*/
+body {
+	background-image: url(Imagens/background-cinza.jpg);
+}
+/* reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.imagem{
+	margin-top: 100px;	
+}
+/* conteiner */
+.container {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+	background-color: #fff;
+	box-shadow:  0px 0px 50px -35px black;
+	-webkit-animation-name: show;
+	-webkit-animation-duration: 0.5s;
+}
+
+@-webkit-keyframes show {
+	from { opacity: 0.0;}	
+	to { opacity: 1.0;}
+}
+
+@keyframes show {
+	from { opacity: 0.0;}	
+	to { opacity: 1.0;}
+}
+}
+
+.container1  {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+    @media (min-width: 1170px) {
+        .container1 {
+            max-width: 1170px;
+            padding: 0;
+        }
+    }
+
+/* linha */
+.row {
+    margin-left: -5px;
+    margin-right: -5px;
+}
+    .row:before,
+    .row:after {
+        content: "";
+        display: table;
+    }
+    .row:after {
+        clear: both;
+    }
+
+/* colunas */
+.col {
+    display: inline-block;
+    vertical-align: top;
+    min-height: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    margin-right: -4px;
+    *zoom: 1;
+    *display: inline;
+	transition: 0.75s;
+}
+    /* duas colonas */
+    @media (min-width: 800px) {
+        .col-2 {
+            width: 50%;
+        }
+    }
+
+    /* tres colunas */
+    @media (min-width: 728px) {
+        .col-3 {
+            width: 33.3333%;
+        }
+    }
+
+/* cinco colunas */
+    @media (min-width: 740px) {
+        .col-5 {
+            width: 20%;
+		}
+		  
+    }
+
+ @media (min-width: 900px) {
+		  .col-2-diferente{
+			width: 50%;
+		}
+    }
+
+
+    /* sidebar */
+    @media (min-width: 992px) {
+        .col-content {
+            width: 75%;
+        }
+
+        .col-sidebar {
+           width: 25%;
+        }
+    }
+	
+/*-------------POSTAGENS--------------*/
+.banner-noticia{
+	background-image:url(../../design/macunaima.jpg);
+	background-size: 100%;
+	width: 100%;
+	height: 850px;
+}
+.banner-noticia h1{
+	font-family: "Courier New",  monospaceue-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Open Sans, Ubuntu, Fira Sans, Helvetica Neue, sans-serif;
+	font-size: 90px;
+	padding: 140px 0px;
+	color: #fff;
+	text-shadow: 1px 6px 6px black;
+}
+.banner-noticia h3{
+	font-family: "Courier New",  monospaceue-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Open Sans, Ubuntu, Fira Sans, Helvetica Neue, sans-serif;
+	font-size: 36px;
+	color: #fff;
+	text-shadow: 1px 6px 6px black;
+}
+/* USAR APENAS PARA DEMOSTRAÇÂO */
+.teste {
+	padding: 5px;
+	margin: 15px 0;
+	color: #fff;
+	padding-bottom: 50px;
+	text-align: center;
+}		
+
+.oficina{
+	width: 125px;
+	transition: 0.5s;
+}
+.oficina:hover{
+	width: 200px;
+}
+.teste1 {
+    text-align: center;
+    margin: 15px 0;
+    color: #fff;
+	padding-bottom: 50px;
+	background:#FFF;
+	margin-left:40px;
+	margin-right:40px;
+}
+.big {
+    height: 50px;
+}
+
+h1,h2 {
+	color: #2A005B;
+	font-family: "Courier New",  monospaceue-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Open Sans, Ubuntu, Fira Sans, Helvetica Neue, sans-serif;
+	text-transform:uppercase;
+}
+p {
+	color: #444548;
+	font-family: 'Inter', sans-serif;
+	font-size: 18px;
+	text-align: justify;
+	padding-top: 10px;
+	padding-right: 50px;
+	padding-bottom: 5px;
+	padding-left: 50px;
+}
+
+p a{
+	text-decoration: none;
+	color: #2A005B;
+	font-size: 18px;
+	transition: 0.1s;
+}
+p a:hover{
+	color: #E8AF00;
+}
+img {
+	max-width: 100%;
+	display: block;
+	height: auto;
+}
+
+/*botão 'VER MAIS'*/
+.vermais {
+	background-color: #2A005B;
+	font-family: 'Inter', sans-serif;
+	color: #FFF;
+	padding: 10px;
+	border: none;
+	text-transform:uppercase;
+	cursor:pointer;
+	transition: 0.3s;
+}
+.vermais:hover{
+	background-color: #E8AF00;
+	padding: 12px;
+	box-shadow: 0px 1.5px 10px 0px black;
+
+}
+
+hr {
+	background-color: #2A005B;
+	height: 2px;
+}
+footer {
+	background-color: #2a005b;
+}
+
+
+h2{
+	margin-top: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	margin-left: 50px;
+	text-transform:uppercase;
+}
+
+h3{
+	text-transform:uppercase;
+	color: #2A005B;
+	padding-top:10px;
+	font-family: "Courier New", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+h5 {
+	color: #2a005b;
+	font-family: "Inter var", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: large;
+	text-align:left;
+	padding-left: 50px;
+	text-transform:uppercase;
+}
+
+.destaques {
+	color: #FFF;
+	background-color: #2a005b;
+	font-family: 'Inter', "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	text-align: center;
+	padding: 8px;
+}
+
+
+h4{
+background: #2A005B;
+	font-family: "Courier New",  monospaceue-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Open Sans, Ubuntu, Fira Sans, Helvetica Neue, sans-serif;
+	text-transform:uppercase;	
+}
+h1{
+	font-family: "Courier New",  monospaceue-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Open Sans, Ubuntu, Fira Sans, Helvetica Neue, sans-serif;
+	color: #2A005B;
+	font-size:36px;
+}
+
+/*------------RODAPÉ-------------*/
+footer{
+	background-color: #2A005B;
+	height: 100%;
+	width: 100%;
+	margin-top: 40px;
+	padding-top: 40px;
+	padding-left: 40px;
+	padding-right: 18px;
+	padding-bottom: 40px;
+	list-style:none;
+}
+footer ul a{
+	text-decoration: none;
+	color: #E8AF00;
+	font-family: "Courier New",  monospaceue-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Open Sans, Ubuntu, Fira Sans;
+	font-size: 20px;
+	margin-bottom: 18px;
+}	
+footer li a{
+	list-style: none;
+	text-decoration: none;
+	font-size: 16px;
+	color: #EDEDED;
+	font-family: "Courier New",  monospaceue-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Open Sans, Ubuntu, Fira Sans;
+}
